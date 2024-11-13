@@ -14,7 +14,8 @@ st.subheader("A bigram GPT built from scratch!")
 github = "https://github.com/BryceRodgers7/VoyagerGPT"
 st.write("View the code [here](%s)" % github)
 
-st.write("Note: this page will take a bit longer than the others, because Transformers require matrix multiplication to generate (make predictions) and streamlit does not provide GPUs. ")
+st.write("Note: this page will take a bit longer than the others, because Transformers require matrix multiplication to generate (make predictions) and streamlit does not provide GPUs.")
+st.markdown("<p style='font-size:20px; font-weight:bold;'>This job has been shrunk down to fit on streamlit's CPU.</p>", unsafe_allow_html=True)
 
 st.sidebar.title('VoyagerGPT Panel')
 input_seed = st.sidebar.number_input("seed number", step=1, value=1337)
@@ -205,7 +206,7 @@ st.divider()
 
 if st.button("Generate some Star Trek text!!"):
     torch.manual_seed(input_seed)
-    st.write(f"generating with seed {input_seed}... just a moment")
+    st.write(f"generating with seed {input_seed} and temperature {temperature}... just a moment")
     context = torch.zeros((1, 1), dtype=torch.long, device=device)
     start_time = time.time()    
     strang = decode(model.generate(context, max_new_tokens=100)[0].tolist())

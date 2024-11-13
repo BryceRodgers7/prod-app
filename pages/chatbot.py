@@ -6,7 +6,9 @@ from random import randrange
 
 menu_with_redirect()
 
-st.title('💬 Pirate Chatbot\n(By Bryce Rodgers)')
+st.title('💬 Pirate Chatbot')
+st.write('Fiddle with the exact model & its parameters using the sidebar.')
+st.write('Use the chatbox at the bottom to converse with the AI.')
 
 # Openers
 openers = ["Yaarg! Whachya need buckaroo?", "Arrr, ya need somethin'?", "Yarr matey got a question for me?"]
